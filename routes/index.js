@@ -12,10 +12,7 @@ router.use('*', (req, res, next) => {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send({
-    path: req.path,
-    curUser: req.currentUser
-  });
+  res.send({});
 });
 
 router.post('/login', (req, res, next) => {
@@ -27,7 +24,10 @@ router.post('/login', (req, res, next) => {
       return res.status(400).send('Invalid username or password');
     }
 
-    res.send({token: user.token});
+    res.send({
+      token: user.token,
+      username: user.username
+    });
 });
 
 router.get('/posts', (req, res, next) => {

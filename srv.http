@@ -1,17 +1,19 @@
 
 @token = 7e81605
+#@server=http://localhost:3000
+@server=http://5.178.85.184:3000
 
 #### posts
-GET http://localhost:3000/posts
+GET {{server}}/posts
 X-Auth: {{token}}
 
 
 ### get post 
-GET http://localhost:3000/post/1
+GET {{server}}/post/1
 X-Auth: {{token}}
 
 ### update post
-PUT http://localhost:3000/post/1
+PUT {{server}}/post/1
 content-type: application/json
 
 {
@@ -20,7 +22,7 @@ content-type: application/json
 }
 
 ### new post
-POST http://localhost:3000/post
+POST {{server}}/post
 X-Auth: {{token}}
 content-type: application/json
 
@@ -30,7 +32,7 @@ content-type: application/json
 }
 
 ### login
-POST http://localhost:3000/login
+POST {{server}}/login
 content-type: application/json
 
 {
@@ -39,5 +41,5 @@ content-type: application/json
 }
 
 ### test
-GET http://localhost:3000/
+GET {{server}}:3000/
 X-Auth: {{token}}
