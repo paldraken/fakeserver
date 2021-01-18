@@ -1,0 +1,43 @@
+
+@token = 7e81605
+
+#### posts
+GET http://localhost:3000/posts
+X-Auth: {{token}}
+
+
+### get post 
+GET http://localhost:3000/post/1
+X-Auth: {{token}}
+
+### update post
+PUT http://localhost:3000/post/1
+content-type: application/json
+
+{
+  "title": "hic tempore officiis consequuntur ab!!!!!!",
+  "body": "Quaerat facere nesciunt similique optio.\nSed fugiat et amet sit molestiae quibusdam voluptas dolorem perspiciatis.\nTenetur repellendus recusandae voluptatibus qui quisquam quidem.\nVel vero est.\nConsequatur qui voluptatem sed."
+}
+
+### new post
+POST http://localhost:3000/post
+X-Auth: {{token}}
+content-type: application/json
+
+{
+  "title": "Zagolovok",
+  "body": "Quaerat facere."
+}
+
+### login
+POST http://localhost:3000/login
+content-type: application/json
+
+{
+    "username": "megas",
+    "password": "q1w2e3"
+}
+
+### test
+GET http://localhost:3000/
+X-Auth: {{token}}
